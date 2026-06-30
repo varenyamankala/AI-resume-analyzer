@@ -1,0 +1,260 @@
+{
+    "Software Engineer": {
+        "description": "Develop and maintain software applications using modern technologies and best practices",
+        "salary_range": "$100,000 - $180,000",
+        "required_skills": [
+            "Python",
+            "Java",
+            "JavaScript",
+            "Git",
+            "SQL",
+            "REST API",
+            "Object-Oriented Programming",
+            "Data Structures",
+            "Algorithms",
+            "Linux"
+        ],
+        "preferred_skills": [
+            "Docker",
+            "Kubernetes",
+            "AWS",
+            "CI/CD",
+            "Microservices",
+            "React",
+            "Node.js",
+            "MongoDB",
+            "TypeScript",
+            "Testing"
+        ]
+    },
+    "Data Scientist": {
+        "description": "Analyze data and build predictive models using machine learning and statistical techniques",
+        "salary_range": "$110,000 - $190,000",
+        "required_skills": [
+            "Python",
+            "SQL",
+            "Statistics",
+            "Machine Learning",
+            "Data Analysis",
+            "Pandas",
+            "NumPy",
+            "Scikit-learn",
+            "R",
+            "Excel"
+        ],
+        "preferred_skills": [
+            "TensorFlow",
+            "Deep Learning",
+            "PyTorch",
+            "Tableau",
+            "Power BI",
+            "Hadoop",
+            "Spark",
+            "Big Data",
+            "Jupyter",
+            "Data Visualization"
+        ]
+    },
+    "Full Stack Developer": {
+        "description": "Develop front-end and back-end web applications with full responsibility for the stack",
+        "salary_range": "$95,000 - $160,000",
+        "required_skills": [
+            "JavaScript",
+            "HTML",
+            "CSS",
+            "React",
+            "Node.js",
+            "SQL",
+            "REST API",
+            "Git",
+            "MongoDB",
+            "Express"
+        ],
+        "preferred_skills": [
+            "TypeScript",
+            "Docker",
+            "AWS",
+            "CI/CD",
+            "GraphQL",
+            "Vue.js",
+            "Angular",
+            "PostgreSQL",
+            "Redis",
+            "Testing"
+        ]
+    },
+    "DevOps Engineer": {
+        "description": "Manage infrastructure, deployment pipelines, and cloud operations",
+        "salary_range": "$105,000 - $175,000",
+        "required_skills": [
+            "Linux",
+            "Docker",
+            "Kubernetes",
+            "CI/CD",
+            "Git",
+            "AWS",
+            "Terraform",
+            "Jenkins",
+            "Python",
+            "Bash"
+        ],
+        "preferred_skills": [
+            "Ansible",
+            "Prometheus",
+            "ELK Stack",
+            "Azure",
+            "GCP",
+            "Scripting",
+            "Networking",
+            "Security",
+            "Monitoring",
+            "Infrastructure as Code"
+        ]
+    },
+    "Cloud Architect": {
+        "description": "Design and implement scalable cloud-based solutions for enterprise applications",
+        "salary_range": "$120,000 - $200,000",
+        "required_skills": [
+            "AWS",
+            "Azure",
+            "Cloud Architecture",
+            "Docker",
+            "Kubernetes",
+            "Networking",
+            "Security",
+            "SQL",
+            "Python",
+            "Infrastructure as Code"
+        ],
+        "preferred_skills": [
+            "GCP",
+            "Terraform",
+            "Cost Optimization",
+            "Microservices",
+            "Machine Learning",
+            "Big Data",
+            "Enterprise Architecture",
+            "DevOps"
+        ]
+    },
+    "Mobile Developer": {
+        "description": "Develop native and cross-platform mobile applications for iOS and Android",
+        "salary_range": "$95,000 - $170,000",
+        "required_skills": [
+            "Swift",
+            "Kotlin",
+            "Java",
+            "React Native",
+            "Mobile UI",
+            "REST API",
+            "Git",
+            "Firebase",
+            "SQLite"
+        ],
+        "preferred_skills": [
+            "Flutter",
+            "Objective-C",
+            "Xamarin",
+            "MVVM",
+            "Unit Testing",
+            "App Store Deployment",
+            "Push Notifications",
+            "GraphQL"
+        ]
+    },
+    "Frontend Developer": {
+        "description": "Build responsive and interactive user interfaces using modern web technologies",
+        "salary_range": "$90,000 - $155,000",
+        "required_skills": [
+            "JavaScript",
+            "React",
+            "HTML",
+            "CSS",
+            "Git",
+            "REST API",
+            "Responsive Design",
+            "CSS Frameworks",
+            "Redux",
+            "npm"
+        ],
+        "preferred_skills": [
+            "TypeScript",
+            "Vue.js",
+            "Angular",
+            "Next.js",
+            "Tailwind CSS",
+            "WebPack",
+            "Testing Libraries",
+            "CSS-in-JS"
+        ]
+    },
+    "Backend Developer": {
+        "description": "Build scalable server-side applications and APIs",
+        "salary_range": "$95,000 - $170,000",
+        "required_skills": [
+            "Python",
+            "Java",
+            "Node.js",
+            "SQL",
+            "REST API",
+            "Databases",
+            "Git",
+            "Server Management",
+            "Linux"
+        ],
+        "preferred_skills": [
+            "GraphQL",
+            "Docker",
+            "Microservices",
+            "Message Queues",
+            "Caching",
+            "PostgreSQL",
+            "MongoDB",
+            "API Design"
+        ]
+    },
+    "QA Engineer": {
+        "description": "Ensure software quality through testing and automation",
+        "salary_range": "$80,000 - $140,000",
+        "required_skills": [
+            "Testing",
+            "Automation",
+            "Selenium",
+            "Python",
+            "Java",
+            "SQL",
+            "Git",
+            "Test Planning"
+        ],
+        "preferred_skills": [
+            "Cucumber",
+            "TestNG",
+            "JUnit",
+            "API Testing",
+            "Performance Testing",
+            "CI/CD",
+            "Docker",
+            "Load Testing"
+        ]
+    },
+    "Product Manager": {
+        "description": "Drive product strategy, roadmap, and development",
+        "salary_range": "$110,000 - $190,000",
+        "required_skills": [
+            "Product Strategy",
+            "Data Analysis",
+            "User Research",
+            "Stakeholder Management",
+            "Roadmap Development",
+            "Analytics"
+        ],
+        "preferred_skills": [
+            "Agile",
+            "SQL",
+            "Marketing",
+            "User Experience",
+            "Business Development",
+            "Technical Knowledge"
+        ]
+    }
+}

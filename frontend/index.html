@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Resume Analyzer - Web</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-content">
+                <div class="logo">
+                    <h1>🎯 AI Resume Analyzer</h1>
+                </div>
+                <div class="nav-links">
+                    <a href="#home" class="nav-link active" data-section="home">Home</a>
+                    <a href="#analyzer" class="nav-link" data-section="analyzer">Analyzer</a>
+                    <a href="#about" class="nav-link" data-section="about">About</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Container -->
+    <div class="container">
+        
+        <!-- Home Section -->
+        <section id="home" class="section active">
+            <div class="hero">
+                <h2>Welcome to AI Resume Analyzer</h2>
+                <p>Upload your resume and get instant feedback on skill matching and ATS compatibility</p>
+                <button class="btn btn-primary btn-large" onclick="navigateTo('analyzer')">
+                    Get Started
+                </button>
+            </div>
+            
+            <div class="features">
+                <div class="feature">
+                    <div class="feature-icon">📤</div>
+                    <h3>Upload Resume</h3>
+                    <p>Upload your PDF resume in seconds</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Skill Matching</h3>
+                    <p>Compare against 10+ job roles</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">📊</div>
+                    <h3>ATS Score</h3>
+                    <p>Get your ATS compatibility rating</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">💡</div>
+                    <h3>Recommendations</h3>
+                    <p>Get actionable improvement tips</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Analyzer Section -->
+        <section id="analyzer" class="section">
+            <h2>Resume Analyzer</h2>
+            
+            <div class="upload-area" id="uploadArea">
+                <div class="upload-content">
+                    <div class="upload-icon">📄</div>
+                    <h3>Drag & Drop your PDF Resume</h3>
+                    <p>or</p>
+                    <button class="btn btn-secondary" onclick="document.getElementById('fileInput').click()">
+                        Click to Browse
+                    </button>
+                    <input type="file" id="fileInput" accept=".pdf" style="display: none;">
+                </div>
+            </div>
+
+            <!-- Job Role Selection -->
+            <div id="jobRoleSection" class="job-role-section" style="display: none;">
+                <label for="jobRole">Select Target Job Role:</label>
+                <select id="jobRole" class="form-select">
+                    <option value="">-- Select a job role --</option>
+                </select>
+            </div>
+
+            <!-- Analysis Button -->
+            <div id="analyzeButtonSection" class="analyze-section" style="display: none;">
+                <button class="btn btn-primary btn-large" id="analyzeBtn" onclick="analyzeResume()">
+                    🔍 Analyze Resume
+                </button>
+            </div>
+
+            <!-- Loading Indicator -->
+            <div id="loadingIndicator" class="loading" style="display: none;">
+                <div class="spinner"></div>
+                <p>Analyzing your resume...</p>
+            </div>
+
+            <!-- Results Section -->
+            <div id="resultsSection" style="display: none;">
+                <!-- File Info -->
+                <div class="results-card">
+                    <h3>📋 Resume Information</h3>
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <label>File Name:</label>
+                            <span id="fileName"></span>
+                        </div>
+                        <div class="info-item">
+                            <label>Pages:</label>
+                            <span id="filePages"></span>
+                        </div>
+                        <div class="info-item">
+                            <label>Size:</label>
+                            <span id="fileSize"></span>
+                        </div>
+                        <div class="info-item">
+                            <label>Skills Found:</label>
+                            <span id="skillsFound"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ATS Score Card -->
+                <div class="results-card">
+                    <h3>📊 ATS Score Analysis</h3>
+                    <div class="ats-card">
+                        <div class="ats-score-display" id="atsScoreDisplay"></div>
+                        <div class="ats-status" id="atsStatus"></div>
+                    </div>
+                    <div class="ats-breakdown" id="atsBreakdown"></div>
+                    <div class="ats-feedback" id="atsFeedback"></div>
+                </div>
+
+                <!-- Skills Analysis Card -->
+                <div class="results-card" id="skillsAnalysisCard" style="display: none;">
+                    <h3>🎯 Skill Matching Analysis</h3>
+                    <div class="skills-metrics">
+                        <div class="metric">
+                            <div class="metric-label">Required Skills Match</div>
+                            <div class="metric-value" id="requiredMatch"></div>
+                            <div class="metric-percentage" id="requiredPercent"></div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-label">Preferred Skills Match</div>
+                            <div class="metric-value" id="preferredMatch"></div>
+                            <div class="metric-percentage" id="preferredPercent"></div>
+                        </div>
+                    </div>
+
+                    <!-- Top Skills Chart -->
+                    <div class="chart-container">
+                        <h4>Top Skills Found</h4>
+                        <canvas id="skillsChart"></canvas>
+                    </div>
+
+                    <!-- Matched Skills -->
+                    <div class="skills-lists">
+                        <div class="skills-list">
+                            <h4>✅ Matched Required Skills</h4>
+                            <div id="matchedRequired" class="skill-tags"></div>
+                        </div>
+                        <div class="skills-list">
+                            <h4>❌ Missing Required Skills</h4>
+                            <div id="missingRequired" class="skill-tags"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recommendations Card -->
+                <div class="results-card" id="recommendationsCard" style="display: none;">
+                    <h3>💡 Recommendations</h3>
+                    <div id="suggestions" class="suggestions"></div>
+                </div>
+
+                <!-- Download Button -->
+                <div class="results-card">
+                    <button class="btn btn-success" onclick="downloadReport()">
+                        📥 Download Report
+                    </button>
+                    <button class="btn btn-secondary" onclick="resetAnalyzer()">
+                        🔄 Analyze Another Resume
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section">
+            <h2>About AI Resume Analyzer</h2>
+            <div class="about-content">
+                <h3>How It Works</h3>
+                <ol>
+                    <li><strong>Upload:</strong> Submit your PDF resume</li>
+                    <li><strong>Extract:</strong> AI extracts text and skills</li>
+                    <li><strong>Analyze:</strong> Compare against job requirements</li>
+                    <li><strong>Score:</strong> Get ATS compatibility rating</li>
+                    <li><strong>Improve:</strong> Follow recommendations</li>
+                </ol>
+
+                <h3>What is ATS?</h3>
+                <p>
+                    ATS (Applicant Tracking System) is software used by companies to filter resumes.
+                    Our score helps you understand how well your resume is optimized for these systems.
+                </p>
+
+                <h3>Supported Job Roles</h3>
+                <div class="roles-grid" id="rolesGrid"></div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 AI Resume Analyzer. All rights reserved.</p>
+    </footer>
+
+    <script src="assets/js/app.js"></script>
+</body>
+</html>

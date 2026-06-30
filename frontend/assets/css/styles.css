@@ -1,0 +1,600 @@
+/* ============================================
+   AI Resume Analyzer - CSS Styles
+   ============================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8f9fa;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ============================================
+   Navigation Bar
+   ============================================ */
+
+.navbar {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo h1 {
+    color: white;
+    font-size: 1.8rem;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+    cursor: pointer;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* ============================================
+   Sections
+   ============================================ */
+
+.section {
+    display: none;
+    padding: 3rem 0;
+    animation: fadeIn 0.3s ease-in;
+}
+
+.section.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ============================================
+   Hero Section
+   ============================================ */
+
+.hero {
+    text-align: center;
+    padding: 3rem 0;
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+    border-radius: 8px;
+    margin-bottom: 3rem;
+}
+
+.hero h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.hero p {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 2rem;
+}
+
+/* ============================================
+   Features Section
+   ============================================ */
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.feature {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.feature:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.feature-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.feature h3 {
+    margin-bottom: 0.5rem;
+    color: #667eea;
+}
+
+/* ============================================
+   Buttons
+   ============================================ */
+
+.btn {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-weight: 500;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+.btn-secondary {
+    background: #f0f0f0;
+    color: #333;
+    border: 2px solid #ddd;
+}
+
+.btn-secondary:hover {
+    background: #e0e0e0;
+}
+
+.btn-success {
+    background: #2ecc71;
+    color: white;
+}
+
+.btn-success:hover {
+    background: #27ae60;
+}
+
+.btn-large {
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+}
+
+/* ============================================
+   Upload Area
+   ============================================ */
+
+.upload-area {
+    background: white;
+    border: 3px dashed #667eea;
+    border-radius: 8px;
+    padding: 3rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.upload-area:hover {
+    border-color: #764ba2;
+    background: #f8f9ff;
+}
+
+.upload-area.drag-over {
+    border-color: #764ba2;
+    background: #f0f0ff;
+}
+
+.upload-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.upload-content h3 {
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+/* ============================================
+   Forms
+   ============================================ */
+
+.job-role-section {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.job-role-section label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: #333;
+}
+
+.form-select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    background: white;
+    cursor: pointer;
+}
+
+.form-select:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+/* ============================================
+   Loading Indicator
+   ============================================ */
+
+.loading {
+    text-align: center;
+    padding: 3rem;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 4px solid #f0f0f0;
+    border-top-color: #667eea;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 1rem;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* ============================================
+   Results Section
+   ============================================ */
+
+.results-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.results-card h3 {
+    margin-bottom: 1.5rem;
+    color: #333;
+    font-size: 1.3rem;
+}
+
+.results-card h4 {
+    margin-bottom: 1rem;
+    color: #667eea;
+}
+
+/* Info Grid */
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+.info-item {
+    padding: 1rem;
+    background: #f8f9fa;
+    border-radius: 4px;
+}
+
+.info-item label {
+    display: block;
+    font-weight: 500;
+    color: #666;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.info-item span {
+    font-size: 1.2rem;
+    color: #333;
+    font-weight: 500;
+}
+
+/* ATS Score Display */
+
+.ats-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    align-items: center;
+}
+
+.ats-score-display {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: bold;
+    color: #667eea;
+}
+
+.ats-status {
+    font-size: 1.1rem;
+    padding: 1rem;
+    background: #f0f0ff;
+    border-radius: 4px;
+    border-left: 4px solid #667eea;
+}
+
+.ats-breakdown {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.ats-item {
+    background: #f8f9fa;
+    padding: 1rem;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.ats-item-label {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 0.5rem;
+}
+
+.ats-item-score {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #667eea;
+}
+
+.ats-feedback {
+    list-style: none;
+}
+
+.ats-feedback li {
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+.ats-feedback li:last-child {
+    border-bottom: none;
+}
+
+/* Skills Analysis */
+
+.skills-metrics {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.metric {
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.metric-label {
+    font-weight: 500;
+    color: #666;
+    margin-bottom: 0.5rem;
+}
+
+.metric-value {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #667eea;
+}
+
+.metric-percentage {
+    font-size: 1.2rem;
+    color: #764ba2;
+    margin-top: 0.5rem;
+}
+
+/* Chart Container */
+
+.chart-container {
+    margin-bottom: 2rem;
+    position: relative;
+    height: 400px;
+}
+
+.chart-container canvas {
+    max-height: 400px;
+}
+
+/* Skills Lists */
+
+.skills-lists {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.skills-list {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+}
+
+.skills-list h4 {
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.skill-tag {
+    background: white;
+    border: 1px solid #ddd;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    color: #333;
+    display: inline-block;
+}
+
+.skill-tag.matched {
+    border-color: #2ecc71;
+    background: #f0fdf4;
+    color: #27ae60;
+}
+
+.skill-tag.missing {
+    border-color: #e74c3c;
+    background: #fef2f2;
+    color: #c0392b;
+}
+
+/* Suggestions */
+
+.suggestions {
+    list-style: none;
+}
+
+.suggestion {
+    padding: 1rem;
+    margin-bottom: 1rem;
+    background: #f0f0ff;
+    border-left: 4px solid #667eea;
+    border-radius: 4px;
+}
+
+.suggestion strong {
+    color: #667eea;
+}
+
+/* About Section */
+
+.about-content {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    line-height: 1.8;
+}
+
+.about-content h3 {
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    color: #667eea;
+}
+
+.about-content ol {
+    margin-left: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.about-content li {
+    margin-bottom: 0.5rem;
+}
+
+.roles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.role-card {
+    background: #f8f9fa;
+    padding: 1rem;
+    border-radius: 4px;
+    border-left: 3px solid #667eea;
+}
+
+.role-card strong {
+    color: #667eea;
+}
+
+/* ============================================
+   Footer
+   ============================================ */
+
+.footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 2rem;
+    margin-top: 3rem;
+}
+
+/* ============================================
+   Responsive Design
+   ============================================ */
+
+@media (max-width: 768px) {
+    .hero h2 {
+        font-size: 1.8rem;
+    }
+
+    .nav-links {
+        gap: 1rem;
+    }
+
+    .ats-card {
+        grid-template-columns: 1fr;
+    }
+
+    .skills-metrics {
+        grid-template-columns: 1fr;
+    }
+
+    .skills-lists {
+        grid-template-columns: 1fr;
+    }
+
+    .ats-breakdown {
+        grid-template-columns: 1fr 1fr;
+    }
+}
